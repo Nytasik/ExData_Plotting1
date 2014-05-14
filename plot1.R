@@ -8,6 +8,8 @@ cn<-c("Date","Time","Global_active_power",
 a<-read.table("household_power_consumption.txt",sep=";",
               skip=66637,nrows=2880,col.names=cn, colClasses=cc)
 
+dt<-strptime(paste(a[,1],a[,2]),"%d/%m/%Y %H:%M:%S")
+
 #Second, open a destination file for saving our plot
 png(file="plot1.png",width = 480, height = 480)
 
